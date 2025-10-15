@@ -51,7 +51,7 @@ class Order {
   // Method to get delivery info string.
   String get deliveryInfo {
     if (deliveryType == DeliveryType.PICKUP) {
-      return 'Pick up at shop';
+      return 'Pick up at shop @BKK ';
     } else {
       // delivery
       return 'Deliver to ' + deliveryAddress!.fullAddress;
@@ -75,13 +75,14 @@ void main() {
         pickup.id.toString() +
         ' total: \$' +
         pickup.totalAmount.toString() +
+        ' , ' +
         'Info: ' +
         pickup.deliveryInfo +
-        '',
+        ' ',
   );
 
   // Delivery order, with address
-  Address addr = Address('123 Road', 'City', '12345');
+  Address addr = Address('ToulTumPong', 'Phnom Penh', '12345');
   Order deliv = Order(
     id: 2,
     products: [book],
@@ -93,6 +94,7 @@ void main() {
         deliv.id.toString() +
         ' total: \$' +
         deliv.totalAmount.toString() +
+        ' , ' +
         'Info: ' +
         deliv.deliveryInfo,
   );
